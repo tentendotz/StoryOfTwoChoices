@@ -8,6 +8,7 @@
 import Foundation
 
 struct StoryBrain {
+    
     var storyNumber = 0
     
     let stories = [
@@ -55,7 +56,19 @@ struct StoryBrain {
         )
         
     ]
-
+    
+    
+    mutating func nextStory(_ userChoice: String) {
+        let currentStory = stories[storyNumber]
+        
+        if userChoice == currentStory.choice1 {
+            storyNumber = currentStory.choice1Destination
+        } else if userChoice == currentStory.choice2 {
+            storyNumber = currentStory.choice2Destination
+        }
+        
+    }
+    
     
     func getStoryText() -> String {
         return stories[storyNumber].title
