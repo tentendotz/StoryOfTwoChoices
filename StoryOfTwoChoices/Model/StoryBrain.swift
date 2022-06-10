@@ -8,6 +8,7 @@
 import Foundation
 
 struct StoryBrain {
+    var storyNumber = 0
     
     let stories = [
         Story(
@@ -54,5 +55,16 @@ struct StoryBrain {
         )
         
     ]
+
+    
+    func getStoryText() -> String {
+        return stories[storyNumber].title
+    }
+    func getChoice1Text() -> String {
+        return stories[storyNumber].choice1
+    }
+    func getChoice2Text() -> String {
+        return stories[storyNumber].choice2
+    }
     
 }
